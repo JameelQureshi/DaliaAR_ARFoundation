@@ -36,44 +36,7 @@ namespace UnityEngine.XR.ARFoundation.Samples
 
         string m_ErrorMessage = "";
 
-        void OnGUI()
-        {
-            var fontSize = 50;
-            GUI.skin.button.fontSize = fontSize;
-            GUI.skin.label.fontSize = fontSize;
-
-            float margin = 100;
-
-            GUILayout.BeginArea(new Rect(margin, margin, Screen.width - margin * 2, Screen.height - margin * 2));
-
-            switch (m_State)
-            {
-                case State.OriginalPrefab:
-                {
-                    if (GUILayout.Button($"Alternative Prefab for {GetComponent<PrefabImagePairManager>().imageLibrary[0].name}"))
-                    {
-                        m_State = State.ChangeToAlternativePrefab;
-                    }
-
-                    break;
-                }
-                case State.AlternativePrefab:
-                {
-                    if (GUILayout.Button($"Original Prefab for {GetComponent<PrefabImagePairManager>().imageLibrary[0].name}"))
-                    {
-                        m_State = State.ChangeToOriginalPrefab;
-                    }
-
-                    break;
-                }
-                case State.Error:
-                {
-                    GUILayout.Label(m_ErrorMessage);
-                    break;
-                }
-            }
-            GUILayout.EndArea();
-        }
+        
 
         void SetError(string errorMessage)
         {
