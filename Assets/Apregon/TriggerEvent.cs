@@ -16,7 +16,7 @@ public class TriggerEvent : MonoBehaviour
     private void Update()
     {
         float dist = Vector3.Distance(target.position, transform.position);
-        if (dist > 1.5f)
+        if (dist > 0.2f)
         {
             material.color = new Color(material.color.r, material.color.g, material.color.b, 1.0f);
         }
